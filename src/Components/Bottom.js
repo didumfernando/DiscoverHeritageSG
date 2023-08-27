@@ -57,17 +57,27 @@ const Bottom = () => {
 
     return(
     <Footer style={footerStyle}> 
-        { review &&
-            <Button type="primary" shape="round" icon={<StarOutlined />} onClick={onReview}/> 
-        }
+       { review && !explore && !discover &&
+        <>
+            <Button type="primary" shape="round" icon={<InfoCircleOutlined />} onClick={onExplore}/>&nbsp 
+            <Button type="primary" shape="round" icon={<HomeFilled />} onClick={onDiscover}/> 
+        </>
+    }
 
-        { explore &&
-          <Button type="primary" shape="round" icon={<InfoCircleOutlined />} onClick={onExplore}/> 
-        }
-        { discover &&
-          <Button type="primary" shape="round" icon={<HomeFilled />} onClick={onDiscover}/> 
-        }    
-    </Footer> 
+    { !review && explore && !discover &&
+        <>
+            <Button type="primary" shape="round" icon={<StarOutlined />} onClick={onReview}/>&nbsp 
+            <Button type="primary" shape="round" icon={<HomeFilled />} onClick={onDiscover}/> 
+        </>
+    }
+
+    { !review && !explore && discover &&
+        <>
+            <Button type="primary" shape="round" icon={<StarOutlined />} onClick={onReview}/>&nbsp 
+            <Button type="primary" shape="round" icon={<InfoCircleOutlined />} onClick={onExplore}/> 
+        </>
+    }
+</Footer>
     )
 }
 

@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
+  width: 70%;
+  max-width: 400px;
+}
+
